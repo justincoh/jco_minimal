@@ -1,0 +1,34 @@
+@import "variables.css";
+@import "post.css";
+@import "global.css";
+
+.site-header {
+    height: 200px;
+    width: 100%;
+    background-color: var(--swissblue);
+    background-size: contain;
+}
+.post-line {
+    box-sizing: border-box;
+    padding: 1em 0 2em;
+    position: relative;
+    hyphens: auto;
+    border-bottom: 1px solid var(--swissgreen);
+}
+.post-line-excerpt {
+    line-height: 1.5em;
+}
+.post-line-title {
+    margin-bottom: 0;
+}
+.post-line-link {
+    text-decoration: none;
+    color: inherit;
+}
+.post-line-link:hover {
+    color: black;
+}
+.tag {
+    color: var(--swissbrown);
+}
+

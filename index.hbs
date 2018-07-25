@@ -1,0 +1,13 @@
+{{!< default}}
+    <header
+        class="site-header"
+        {{#if @blog.cover_image}}
+            style="background-image: url({{@blog.cover_image}});"
+        {{/if}}
+    ></header>
+    <div class="main-container">
+            {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-line.hbs --}}
+                {{> "post-line"}}
+            {{/foreach}}
+    </div>

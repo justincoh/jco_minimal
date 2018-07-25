@@ -1,0 +1,28 @@
+body {
+    background-color: var(--swisswhite);
+    color: #3f3f3f;
+    font-family: Helvetica;
+    margin: 0;
+}
+h3 {
+    font-size: 1.5em;
+}
+footer {
+    font-size: .9em;
+}
+.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vw;
+    width: 100vw;
+    background: url(../images/concrete_seamless.png);
+    opacity: .6;
+    z-index: -1;
+}
+.main-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0 20%;
+}

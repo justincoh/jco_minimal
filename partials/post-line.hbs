@@ -1,0 +1,25 @@
+<article class="post-line">
+    <header class="post-line-header">
+        <h3 class="post-line-title">
+            <a class="post-line-link" href="{{url}}">
+                {{title}}
+            </a>
+        </h3>
+    </header>
+    <p class="post-line-excerpt">
+        {{excerpt words="30"}}
+        <a class="post-line-link" href="{{url}}">ICON</a>
+    </p>
+    <footer class="post-line-meta">
+        {{!-- {{#primary_author}}
+            {{name}}
+        {{/primary_author}} --}}
+        {{date published_at format="DD MMMM YYYY"}}
+        &nbsp;|&nbsp;
+        {{#foreach tags limit="3"}}
+            <span class="tag">{{name}}{{#unless @last}},&nbsp;{{/unless}}</span>
+        {{/foreach}}
+        <br>
+        {{!-- <span class="reading-time">{{reading_time}}</span> --}}
+    </footer>
+</article>

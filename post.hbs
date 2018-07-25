@@ -1,0 +1,14 @@
+{{!< default}}
+
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{#post}}
+<div class="main-container">
+	<h3>Now we're inside the post context</h3>
+	<div class="post-content">
+	{{content}}
+	</div>
+</div>
+
+{{/post}}
