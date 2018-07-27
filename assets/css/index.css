@@ -1,12 +1,25 @@
-@import "variables.css";
-@import "post.css";
-@import "global.css";
-
 .site-header {
     height: 200px;
     width: 100%;
-    background-color: var(--swissblue);
+    background-color: var(--swissblack);
     background-size: contain;
+    display: flex;
+    justify-content: center;
+}
+.site-header-title {
+    align-self: center;
+    color: var(--swisswhite);
+    font-size: 3em;
+    font-weight: 300;
+}
+.site-header-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    background: url(../images/funky-lines.png);
+    opacity: .15;
 }
 .post-line {
     box-sizing: border-box;
@@ -31,4 +44,3 @@
 .tag {
     color: var(--swissbrown);
 }
-

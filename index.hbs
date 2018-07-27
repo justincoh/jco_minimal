@@ -4,7 +4,11 @@
         {{#if @blog.cover_image}}
             style="background-image: url({{@blog.cover_image}});"
         {{/if}}
-    ></header>
+    >
+    <h2 class="site-header-title" >Subway Reads</h2>
+    <div class="site-header-texture"></div>
+
+    </header>
     <div class="main-container">
             {{#foreach posts}}
                 {{!-- The tag below includes the markup for each post - partials/post-line.hbs --}}
