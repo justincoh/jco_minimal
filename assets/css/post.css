@@ -1,6 +1,7 @@
 .post-title {
     width:100%;
     margin-bottom: 7px;
+    font-weight: 500;
 }
 .post-date {
     color: var(--swissgreen);

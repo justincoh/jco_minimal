@@ -9,8 +9,9 @@
 .site-header-title {
     align-self: center;
     color: var(--swisswhite);
-    font-size: 3em;
-    font-weight: 300;
+    font-size: 3.5em;
+    font-weight: 500;
+    letter-spacing: 3px;
 }
 .site-header-texture {
     position: absolute;
@@ -32,6 +33,7 @@
     line-height: 1.5em;
 }
 .post-line-title {
+    font-weight: 600;
     margin-bottom: 0;
 }
 .post-line-link {
