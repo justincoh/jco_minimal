@@ -5,8 +5,14 @@ into the {body} of the default.hbs template --}}
 
 {{navigation}}
 {{#post}}
+
 <div class="main-container">
-	<h3>Now we're inside the post context</h3>
+	<div class="title-block">
+		<h2 class="post-title">{{title}}</h2>
+		<span class="post-date">
+			{{date published_at format="DD MMMM YYYY"}}
+		</span>
+	</div>
 	<div class="post-content">
 	{{content}}
 	</div>

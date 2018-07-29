@@ -1,3 +1,14 @@
+.post-title {
+    width:100%;
+    margin-bottom: 7px;
+}
+.post-date {
+    color: var(--swissgreen);
+    padding-left: 5px;
+}
 .post-content {
-    background-color: black;
+    font-size: 1.1em;
+}
+.title-block {
+    margin-bottom: 1em;
 }
