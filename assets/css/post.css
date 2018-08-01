@@ -1,7 +1,7 @@
 .post-title {
     width:100%;
     margin-bottom: 7px;
-    font-weight: 500;
+    font-weight: 700;
 }
 .post-date {
     color: var(--swissgreen);
@@ -9,6 +9,7 @@
 }
 .post-content {
     font-size: 1.1em;
+    overflow: auto;
 }
 .title-block {
     margin-bottom: 1em;

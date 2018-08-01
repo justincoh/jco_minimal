@@ -7,7 +7,9 @@ body {
     line-height: 1.5em;
 }
 h2 {
-    font-size: 2em;
+    font-size: 1.7em;
+    font-weight: 500;
+    margin-top: 1.3em;
 }
 h3 {
     font-size: 1.5em;
@@ -22,6 +24,36 @@ p {
 ol, ul {
     margin: 2em 0;
     padding: 0 2em;
+}
+a {
+    color: var(--swissblue);
+}
+
+blockquote {
+    position: relative;
+}
+blockquote:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1em;
+    height: 100%;
+    border-left: 3px solid var(--swissgreen);
+}
+.nav-wrapper {
+    padding: 1% 5% 0;
+}
+.home {
+    text-decoration: none;
+    border: 1px solid var(--swissblue);
+    color: var(--swissblue);
+    padding: .5em 1em;
+    border-radius: 2px;
+    font-size: .8em;
+}
+.home:hover {
+    color: var(--swisswhite);
+    background-color: var(--swissblue);
 }
 .noise {
     position: fixed;

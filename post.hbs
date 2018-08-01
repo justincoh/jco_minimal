@@ -6,9 +6,15 @@ into the {body} of the default.hbs template --}}
 {{navigation}}
 {{#post}}
 
+{{!--
+{{#if feature_image}}
+<figure class="post-feature-image" style="background-image: url({{feature_image}})">
+</figure>
+{{/if}}
+--}}
 <div class="main-container">
 	<div class="title-block">
-		<h2 class="post-title">{{title}}</h2>
+		<h1 class="post-title">{{title}}</h1>
 		<span class="post-date">
 			{{date published_at format="DD MMMM YYYY"}}
 		</span>
