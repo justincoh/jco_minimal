@@ -1,8 +1,7 @@
 .site-header {
-    height: 200px;
+    height: 225px;
     width: 100%;
     background-color: var(--swissblack);
-    background-size: contain;
     display: flex;
     justify-content: center;
 }
@@ -12,6 +11,7 @@
     font-size: 3.5em;
     font-weight: 500;
     letter-spacing: 3px;
+    z-index: 1;
 }
 .site-header-texture {
     position: absolute;
@@ -19,7 +19,9 @@
     left: 0;
     width: 100%;
     height: inherit;
-    background: url(../images/funky-lines.png);
+    background: url(../images/adi_goldstein_grayscale.jpg);
+    background-size: cover;
+    background-position-y: -130px;
     opacity: .15;
 }
 .post-line {
