@@ -2,6 +2,7 @@
     width:100%;
     margin-bottom: 7px;
     font-weight: 700;
+    line-height: 1.2em;
 }
 .post-date {
     color: var(--swissgreen);
@@ -12,5 +13,5 @@
     overflow: auto;
 }
 .title-block {
-    margin-bottom: 1em;
+    margin: 2em 0 1em;
 }

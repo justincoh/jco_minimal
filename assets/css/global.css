@@ -14,6 +14,7 @@ h2 {
 h3 {
     font-size: 1.5em;
     font-weight: normal;
+    line-height: 1.3em;
 }
 footer {
     font-size: .9em;
@@ -28,7 +29,9 @@ ol, ul {
 a {
     color: var(--swissblue);
 }
-
+img {
+    max-width: 100%;
+}
 blockquote {
     position: relative;
 }
@@ -41,7 +44,9 @@ blockquote:before {
     border-left: 3px solid var(--swissgreen);
 }
 .nav-wrapper {
-    padding: 1% 5% 0;
+    position: absolute;
+    top: 2%;
+    left: 5%;
 }
 .home {
     text-decoration: none;
@@ -70,4 +75,20 @@ blockquote:before {
     flex-flow: row wrap;
     justify-content: left;
     padding: 0 20%;
+}
+@media only screen and (max-width: 1024px) {
+    body {
+        font-size: 14px;
+    }
+    .site-header-title {
+        font-size: 2.5em;
+    }
+    .main-container {
+        padding: 0 5%;
+    }
+    .nav-wrapper {
+        top: 2%;
+        right: 3%;
+        left: unset;
+    }
 }

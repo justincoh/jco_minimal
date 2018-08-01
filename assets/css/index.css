@@ -1,5 +1,5 @@
 .site-header {
-    height: 225px;
+    height: 15em;
     width: 100%;
     background-color: var(--swissblack);
     display: flex;
@@ -21,7 +21,6 @@
     height: inherit;
     background: url(../images/adi_goldstein_grayscale.jpg);
     background-size: cover;
-    background-position-y: -130px;
     opacity: .15;
 }
 .post-line {
