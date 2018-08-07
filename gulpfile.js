@@ -51,9 +51,11 @@ gulp.task('watch', function () {
 });
 
 gulp.task('zip', ['css'], function () {
+    var today = new Date();
+    var datestr = "-" + today.getDate() + "-" + today.getMonth() + "-" + today.getFullYear();
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
-    var filename = themeName + '.zip';
+    var filename = themeName + datestr + '.zip';
 
     return gulp.src([
         '**',

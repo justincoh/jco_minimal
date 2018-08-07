@@ -1,12 +1,12 @@
 {{!< default}}
-    <header
-        class="site-header"
-        {{#if @blog.cover_image}}
-            style="background-image: url({{@blog.cover_image}});"
-        {{/if}}
-    >
-    <h2 class="site-header-title" >Subway Reads</h2>
-    <div class="site-header-texture"></div>
+    <header class="site-header">
+        <h2 class="site-header-title" >Subway Reads</h2>
+        <div class="site-header-texture"
+            {{#if @blog.cover_image}}
+                style="background-image: url({{@blog.cover_image}});"
+            {{/if}}
+            >
+        </div>
 
     </header>
     <div class="main-container">
