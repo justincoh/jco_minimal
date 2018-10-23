@@ -46,3 +46,7 @@
 .tag {
     color: var(--swissbrown);
 }
+mark {
+    background-color: var(--swissgreen);
+    color: var(--swisswhite);
+}
