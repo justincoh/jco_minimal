@@ -35,6 +35,8 @@ img {
 }
 blockquote {
     position: relative;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 blockquote:before {
     content: "";
@@ -89,7 +91,10 @@ blockquote:before {
     }
     .nav-wrapper {
         top: 2%;
-        right: 3%;
+        right: 2%;
         left: unset;
+    }
+    .home {
+        padding: 1em 2em;
     }
 }
