@@ -19,3 +19,8 @@
 .footnotes-list {
     font-size: .85em;
 }
+
+.post-content img {
+  display: block;
+  margin: 1.5em auto;
+}
