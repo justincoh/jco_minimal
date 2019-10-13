@@ -37,6 +37,7 @@
     position: relative;
     hyphens: auto;
     border-bottom: 1px solid var(--swissgreen);
+    width: 100%;
 }
 .post-line-excerpt {
     line-height: 1.5em;
