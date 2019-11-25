@@ -24,3 +24,8 @@
   display: block;
   margin: 1.5em auto 5px;
 }
+
+.kg-embed-card {
+  text-align: center;
+  margin: 2em 0;
+}
