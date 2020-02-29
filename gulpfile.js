@@ -52,7 +52,7 @@ gulp.task('watch', function () {
 
 gulp.task('zip', ['css'], function () {
     var today = new Date();
-    var datestr = "-" + today.getDate() + "-" + today.getMonth() + "-" + today.getFullYear();
+    var datestr = "-" + (today.getMonth() + 1) + "-" + today.getDate() + "-" + today.getFullYear();
     var targetDir = 'dist/';
     var themeName = require('./package.json').name;
     var filename = themeName + datestr + '.zip';
