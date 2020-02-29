@@ -17,7 +17,11 @@
         {{date published_at format="DD MMMM YYYY"}}
         &nbsp;|&nbsp;
         {{#foreach tags limit="3"}}
-            <span class="tag">{{name}}{{#unless @last}},&nbsp;{{/unless}}</span>
+            <span class="tag">
+              <a href="/tag/{{name}}">
+                {{name}}{{#unless @last}},&nbsp;{{/unless}}
+              </a>
+            </span>
         {{/foreach}}
         <br>
         {{!-- <span class="reading-time">{{reading_time}}</span> --}}

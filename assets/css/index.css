@@ -39,6 +39,10 @@
     border-bottom: 1px solid var(--swissgreen);
     width: 100%;
 }
+.post-line a {
+  color: inherit;
+  text-decoration: none;
+}
 .post-line-excerpt {
     line-height: 1.5em;
 }

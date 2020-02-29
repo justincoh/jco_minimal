@@ -1,0 +1,18 @@
+{{!< default}}
+<header class="site-header">
+  <h2 class="site-header-title tags" >Posts Tagged: {{tag.name}}</h2>
+  <div class="site-header-texture"
+    {{#if @blog.cover_image}}
+        style="background-image: url({{@blog.cover_image}});"
+    {{/if}}
+  >
+  </div>
+</header>
+{{navigation class="tags"}}
+<div class="main-container">
+  {{#foreach posts}}
+    {{!-- The tag below includes the markup for each post - partials/post-line.hbs --}}
+    {{> "post-line"}}
+  {{/foreach}}
+  {{pagination}}
+</div>

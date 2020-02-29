@@ -59,9 +59,18 @@ blockquote:before {
     border-radius: 2px;
     font-size: .8em;
 }
+.home.tags {
+  border: 1px solid var(--swisswhite);
+  color: var(--swisswhite);
+}
 .home:hover {
     color: var(--swisswhite);
     background-color: var(--swissblue);
+}
+.home.tags:hover {
+    color: var(--swissblue);
+    background-color: var(--swisswhite);
+    border-color: var(--swisswhite);
 }
 .noise {
     position: fixed;
