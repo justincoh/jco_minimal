@@ -8,11 +8,12 @@
     font-weight: normal;
 }
 .site-header {
-    height: 15em;
-    width: 100%;
     background-color: var(--swissblack);
     display: flex;
+    height: 15em;
     justify-content: center;
+    position: relative;
+    width: 100%;
 }
 .site-header-title {
     align-self: center;

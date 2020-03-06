@@ -3,7 +3,8 @@
     "description": "Minimalist blog theme focused on simplicity and speed",
     "version": "0.1.0",
     "engines": {
-        "ghost": ">=1.2.0"
+        "ghost": ">=1.2.0",
+        "ghost-api": "v3"
     },
     "license": "MIT",
     "author": {
@@ -32,7 +33,7 @@
     "devDependencies": {
         "autoprefixer": "6.3.6",
         "cssnano": "3.7.1",
-        "gulp": "3.9.1",
+        "gulp": "^4.0.0",
         "gulp-livereload": "3.8.1",
         "gulp-postcss": "6.1.1",
         "gulp-sourcemaps": "1.6.0",
