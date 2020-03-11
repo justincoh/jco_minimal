@@ -19,12 +19,15 @@ console.log('window.posts and window.tags created');
 const search = document.getElementById("search");
 const searchOverlay = document.getElementById("search-overlay");
 const closeOverlay = document.getElementById("close-overlay");
+const siteHeaderTitle = document.querySelector('.site-header-title');
 search.addEventListener('click', () => {
   searchOverlay.classList.remove("display-none");
+  siteHeaderTitle.style.visibility = "hidden";
 });
 
 closeOverlay.addEventListener('click', function () {
   searchOverlay.classList.add("display-none");
+  siteHeaderTitle.style.visibility = "";
 })
 
 /* example post object

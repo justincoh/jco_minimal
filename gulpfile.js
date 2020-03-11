@@ -48,9 +48,9 @@ const watch = async () => {
 };
 
 const build = gulp.series(css, nodemonServerInit);
-const dev = gulp.series(build, watch);
+// const dev = gulp.series(build, watch);
 
-module.exports = { default: dev }; // this defines the 'default' task
+module.exports = { default: css }; // this defines the 'default' task
 /*
 var gulp = require('gulp');
 
