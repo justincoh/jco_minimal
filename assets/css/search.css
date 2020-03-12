@@ -38,25 +38,33 @@
   right: 3%;
 }
 
-#search-input {
-  background: none;
-  border: none;
-  border-bottom: 1px solid var(--swisswhite);
+.search-input-container {
   color: var(--swisswhite);
-  font-size: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   max-width: 80%  ;
   position: absolute;
   text-align: center;
   top: 10%;
-  -webkit-appearance: none;
 }
 
-#search-input::placeholder {
+#search-input {
+  background: none;
   color: var(--swisswhite);
+  border: none;
+  border-bottom: 1px solid var(--swisswhite);
+  font-size: 3em;
+  text-align: center;
+  -webkit-appearance: none;
 }
 
 #search-input:focus {
   outline: none;
+}
+
+.search-input-label {
+  width: 100%;
 }
 
 @media only screen and (max-width: 1024px) {
