@@ -11,7 +11,9 @@ function toLowerCaseWordChars (str) {
 }
 // very dumb search implementation, title + excerpt word characters only
 function addSearchValue (post) {
-  post.searchValue = toLowerCaseWordChars(`${post.title}${post.custom_excerpt}`);
+  let searchStr = `${post.title}${post.custom_excerpt}`;
+  searchStr += post.tags.reduce((accum, tag) => accum + tag.name, '');
+  post.searchValue = toLowerCaseWordChars(searchStr)
 };
 
 function getPosts () {
@@ -41,8 +43,8 @@ function search (val) {
 }
 
 getPosts();
-getTags();
-console.log('window.posts with searchValue and window.tags created');
+// getTags();
+console.log('window.posts with searchValue');
 
 const searchTrigger = document.getElementById("search");
 const searchOverlay = document.getElementById("search-overlay");
