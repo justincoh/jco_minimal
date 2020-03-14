@@ -1,8 +1,28 @@
+function debounce(fn, ms) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn(...args), ms);
+  }
+}
+
+function toLowerCaseWordChars (str) {
+  return str.toLowerCase().replace(/\W+/g, '');
+}
+// very dumb search implementation, title + excerpt word characters only
+function addSearchValue (post) {
+  post.searchValue = toLowerCaseWordChars(`${post.title}${post.custom_excerpt}`);
+};
+
 function getPosts () {
   return fetch("/ghost/api/v3/content/posts/?key=28eb36cd70e695b8e6c58c2173&fields=title,url,custom_excerpt&include=tags&limit=all")
     .then(res => res)
     .then(data=> data.json())
-    .then(data => window.posts = data.posts)
+    .then(data => {
+      data.posts.forEach(addSearchValue);
+      window.posts = data.posts;
+    })
+    .catch(err => console.error("error getting posts: ", err));
 }
 
 function getTags () {
@@ -10,17 +30,27 @@ function getTags () {
     .then(res => res)
     .then(data=> data.json())
     .then(data => window.tags = data.tags)
+    .catch(err => console.error("error getting tags: ", err));
+}
+
+function search (val) {
+  const searchVal = toLowerCaseWordChars(val);
+  const resultSet = window.posts.filter(post => post.searchValue.includes(searchVal));
+  console.log("Search results: ", resultSet);
+  return resultSet
 }
 
 getPosts();
 getTags();
-console.log('window.posts and window.tags created');
+console.log('window.posts with searchValue and window.tags created');
 
-const search = document.getElementById("search");
+const searchTrigger = document.getElementById("search");
 const searchOverlay = document.getElementById("search-overlay");
+const searchInput = document.getElementById("search-input");
 const closeOverlay = document.getElementById("close-overlay");
 const siteHeaderTitle = document.querySelector('.site-header-title');
-search.addEventListener('click', () => {
+
+searchTrigger.addEventListener('click', () => {
   searchOverlay.classList.remove("display-none");
   siteHeaderTitle.style.visibility = "hidden";
 });
@@ -29,6 +59,13 @@ closeOverlay.addEventListener('click', function () {
   searchOverlay.classList.add("display-none");
   siteHeaderTitle.style.visibility = "";
 })
+
+const debouncedSearch = debounce(search, 200);
+
+searchInput.addEventListener('keyup', (e) => {
+  debouncedSearch(e.target.value);
+});
+
 
 /* example post object
 
