@@ -41,7 +41,12 @@ function search (val) {
 
   const searchVal = toLowerCaseWordChars(val);
   const resultSet = window.posts.filter(post => post.searchValue.includes(searchVal));
-  resultSet.forEach(createSearchResult); // refill it
+
+  if (resultSet.length) {
+    return resultSet.forEach(createSearchResult); // refill it
+  }
+
+  return createNoResultsMessage(val);
 }
 
 getPosts();
@@ -96,6 +101,13 @@ function createSearchResult (post) {
   anchor.href = post.url;
   anchor.innerText = post.title;
   searchResults.appendChild(anchor);
+}
+
+function createNoResultsMessage (term) {
+  const message = document.createElement('p');
+  message.className = "search-results-item";
+  message.innerText = `No results found for "${term}"`
+  searchResults.appendChild(message);
 }
 
 /* example post object

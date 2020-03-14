@@ -29,6 +29,7 @@
   border: 1px solid var(--swisswhite);
   color: var(--swisswhite);
   cursor: pointer;
+  padding: 7px 10px;
   position: absolute;
   background: none;
   font-size: 1.5em;
@@ -47,17 +48,18 @@
 
 .search-input-container {
   color: var(--swisswhite);
-  max-width: 80%  ;
   text-align: center;
 }
 
 #search-input {
+  border-radius: 0; /* mobile iOS rounding bug */
   background: none;
   color: var(--swisswhite);
   border: none;
   border-bottom: 1px solid var(--swisswhite);
   font-size: 3em;
   text-align: center;
+  width: 100%;
   -webkit-appearance: none;
 }
 
@@ -78,6 +80,7 @@
 .search-results-item {
   color: var(--swisswhite);
   display: block;
+  font-size: 1.4em;
 }
 
 @media only screen and (max-width: 1024px) {
