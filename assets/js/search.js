@@ -27,18 +27,20 @@ function getPosts () {
     .catch(err => console.error("error getting posts: ", err));
 }
 
-function getTags () {
-  return fetch("/ghost/api/v3/content/tags/?key=28eb36cd70e695b8e6c58c2173&fields=name,slug&limit=all")
-    .then(res => res)
-    .then(data=> data.json())
-    .then(data => window.tags = data.tags)
-    .catch(err => console.error("error getting tags: ", err));
-}
+// function getTags () {
+//   return fetch("/ghost/api/v3/content/tags/?key=28eb36cd70e695b8e6c58c2173&fields=name,slug&limit=all")
+//     .then(res => res)
+//     .then(data=> data.json())
+//     .then(data => window.tags = data.tags)
+//     .catch(err => console.error("error getting tags: ", err));
+// }
 
 function search (val) {
+  searchResults.textContent = ""; // quickly clear the whole bucket
+  if (!val) { return; }
+
   const searchVal = toLowerCaseWordChars(val);
   const resultSet = window.posts.filter(post => post.searchValue.includes(searchVal));
-  searchResults.textContent = ""; // quickly clear the whole bucket
   resultSet.forEach(createSearchResult); // refill it
 }
 
@@ -53,15 +55,34 @@ const searchResults = document.querySelector(".search-results");
 const closeOverlay = document.getElementById("close-overlay");
 const siteHeaderTitle = document.querySelector('.site-header-title');
 
-searchTrigger.addEventListener('click', () => {
+function showSearch () {
   searchOverlay.classList.remove("display-none");
   siteHeaderTitle.style.visibility = "hidden";
-});
+  searchInput.focus();
+}
 
-closeOverlay.addEventListener('click', function () {
+function hideSearch () {
   searchOverlay.classList.add("display-none");
   siteHeaderTitle.style.visibility = "";
-})
+}
+
+searchTrigger.addEventListener('click', showSearch)
+
+// cuz i love vim
+document.body.addEventListener('keyup', (e) => {
+  if (e.key === "/") {
+    if (searchOverlay.className.includes("display-none")) {
+      showSearch();
+    }
+  }
+  if (e.key === "Escape") {
+    if (!searchOverlay.className.includes("display-none")) {
+      hideSearch();
+    }
+  }
+});
+
+closeOverlay.addEventListener('click', hideSearch);
 
 const debouncedSearch = debounce(search, 200);
 
