@@ -38,8 +38,8 @@ function getTags () {
 function search (val) {
   const searchVal = toLowerCaseWordChars(val);
   const resultSet = window.posts.filter(post => post.searchValue.includes(searchVal));
-  console.log("Search results: ", resultSet);
-  return resultSet
+  searchResults.textContent = ""; // quickly clear the whole bucket
+  resultSet.forEach(createSearchResult); // refill it
 }
 
 getPosts();
@@ -49,6 +49,7 @@ console.log('window.posts with searchValue');
 const searchTrigger = document.getElementById("search");
 const searchOverlay = document.getElementById("search-overlay");
 const searchInput = document.getElementById("search-input");
+const searchResults = document.querySelector(".search-results");
 const closeOverlay = document.getElementById("close-overlay");
 const siteHeaderTitle = document.querySelector('.site-header-title');
 
@@ -68,6 +69,13 @@ searchInput.addEventListener('keyup', (e) => {
   debouncedSearch(e.target.value);
 });
 
+function createSearchResult (post) {
+  const anchor = document.createElement('a');
+  anchor.className = "search-results-item margin-top-sm";
+  anchor.href = post.url;
+  anchor.innerText = post.title;
+  searchResults.appendChild(anchor);
+}
 
 /* example post object
 

@@ -67,6 +67,16 @@
   width: 100%;
 }
 
+.search-results {
+  width: 100%;
+  text-align: center;
+}
+
+.search-results-item {
+  color: var(--swisswhite);
+  display: block;
+}
+
 @media only screen and (max-width: 1024px) {
   #search-input {
     font-size: 2em;
