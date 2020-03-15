@@ -44,13 +44,35 @@ const css = async () => {
 };
 
 const watch = async () => {
-  gulp.watch(['assets/css/**'], {}, css);
+  gulp.watch(
+    ['assets/css/**'],
+    { events: ['add', 'change'] },
+    css,
+  );
 };
 
-const build = gulp.series(css, nodemonServerInit);
-// const dev = gulp.series(build, watch);
+const compress = async () => {
+  const today = new Date();
+  const datestr = "-" + (today.getMonth() + 1) + "-" + today.getDate() + "-" + today.getFullYear();
+  const targetDir = 'dist/';
+  const themeName = require('./package.json').name;
+  const filename = themeName + datestr + '.zip';
 
-module.exports = { default: css }; // this defines the 'default' task
+  return gulp.src([
+      '**',
+      '!node_modules', '!node_modules/**',
+      '!dist', '!dist/**'
+  ])
+    .pipe(zip(filename))
+    .pipe(gulp.dest(targetDir));
+}
+
+const dev = gulp.series(css, watch);
+
+module.exports = {
+  default: dev,
+  zip: compress,
+};
 /*
 var gulp = require('gulp');
 
@@ -67,12 +89,6 @@ var colorFunction = require('postcss-color-function');
 var cssnano = require('cssnano');
 var customProperties = require('postcss-custom-properties');
 var easyimport = require('postcss-easy-import');
-
-var swallowError = function swallowError(error) {
-    gutil.log(error.toString());
-    gutil.beep();
-    this.emit('end');
-};
 
 var nodemonServerInit = function () {
     livereload.listen(1234);
