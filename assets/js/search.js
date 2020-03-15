@@ -9,7 +9,7 @@ function debounce(fn, ms) {
 function toLowerCaseWordChars (str) {
   return str.toLowerCase().replace(/\W+/g, '');
 }
-// very dumb search implementation, title + excerpt word characters only
+// very dumb search implementation, title + excerpt + tags word characters only
 function addSearchValue (post) {
   let searchStr = `${post.title}${post.custom_excerpt}`;
   searchStr += post.tags.reduce((accum, tag) => accum + tag.name, '');
