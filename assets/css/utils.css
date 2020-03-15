@@ -1,3 +1,11 @@
 .hidden {
   visibility: hidden;
 }
+
+.display-none {
+  display: none;
+}
+
+.margin-top-sm {
+  margin-top: 15px;
+}

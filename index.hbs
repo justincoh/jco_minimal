@@ -1,21 +1,21 @@
 {{!< default}}
-    <header class="site-header">
-        <h2 class="site-header-title" >Subway Reads</h2>
-        <div class="site-header-texture"
-            {{#if @blog.cover_image}}
-                style="background-image: url({{@blog.cover_image}});"
-            {{/if}}
-        >
-        </div>
-        <h4>
-            <a href="/about" id="about">About</a>
-        </h4>
-
-    </header>
-    <div class="main-container">
-            {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-line.hbs --}}
-                {{> "post-line"}}
-            {{/foreach}}
-            {{pagination}}
+  <header class="site-header">
+    <h2 class="site-header-title" >Subway Reads</h2>
+    <div class="site-header-texture"
+      {{#if @blog.cover_image}}
+        style="background-image: url({{@blog.cover_image}});"
+      {{/if}}
+    >
     </div>
+    <h4>
+      <a href="/about" id="about">About</a>
+    </h4>
+    {{> "search"}}
+  </header>
+  <div class="main-container">
+    {{#foreach posts}}
+      {{!-- The tag below includes the markup for each post - partials/post-line.hbs --}}
+      {{> "post-line"}}
+    {{/foreach}}
+    {{pagination}}
+  </div>
