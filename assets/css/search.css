@@ -79,12 +79,28 @@
 
 .search-results-item {
   color: var(--swisswhite);
+  border-bottom: 1px solid var(--swisswhite);
   display: block;
+  max-width: 50%;
+  margin: 0 auto 15px;
+  padding: 10px 0;
+}
+
+.search-results-link {
+  color: var(--swisswhite);
   font-size: 1.4em;
+}
+
+.search-results-excerpt {
+  text-align: left;
 }
 
 @media only screen and (max-width: 1024px) {
   #search-input {
     font-size: 2em;
+  }
+
+  .search-results-item {
+    max-width: 85%;;
   }
 }

@@ -19,7 +19,7 @@ function addSearchValue (post) {
 // 14c11e2f1a17d0c2ba75b2b44e - live
 // 28eb36cd70e695b8e6c58c2173 - dev
 function getPosts () {
-  return fetch("/ghost/api/v3/content/posts/?key=14c11e2f1a17d0c2ba75b2b44e&fields=title,url,custom_excerpt&include=tags&limit=all")
+  return fetch("/ghost/api/v3/content/posts/?key=28eb36cd70e695b8e6c58c2173&fields=title,url,custom_excerpt&include=tags&limit=all")
     .then(res => res)
     .then(data=> data.json())
     .then(data => {
@@ -98,11 +98,21 @@ searchInput.addEventListener('keyup', (e) => {
 });
 
 function createSearchResult (post) {
+  const div = document.createElement('div');
+  div.className = "search-results-item margin-top-sm"
+
   const anchor = document.createElement('a');
-  anchor.className = "search-results-item margin-top-sm";
+  anchor.className = "search-results-link margin-top-sm";
   anchor.href = post.url;
   anchor.innerText = post.title;
-  searchResults.appendChild(anchor);
+
+  const excerpt = document.createElement('p');
+  excerpt.innerText = post.custom_excerpt;
+  excerpt.className = "search-results-excerpt";
+
+  div.appendChild(anchor);
+  div.appendChild(excerpt);
+  searchResults.appendChild(div);
 }
 
 function createNoResultsMessage (term) {
