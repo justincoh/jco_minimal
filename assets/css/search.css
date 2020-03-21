@@ -79,14 +79,31 @@
 
 .search-results-item {
   color: var(--swisswhite);
-  border-bottom: 1px solid var(--swisswhite);
+  border-bottom: 2px solid var(--swisswhite);
   display: block;
   max-width: 50%;
   margin: 0 auto 15px;
   padding: 10px 0;
+  position: relative;
 }
 
+/* .search-results-item::after, */
+.search-results-item::before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  border-bottom: 1px solid var(--swissgreen);
+}
+
+/* .search-results-item::before {
+  bottom: -5px;
+} */
+
 .search-results-link {
+  border-bottom: 1px solid var(--swissgreen);
   color: var(--swisswhite);
   font-size: 1.4em;
 }
